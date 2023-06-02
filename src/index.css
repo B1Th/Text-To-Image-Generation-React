@@ -1,13 +1,247 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+.background_img {
+  background-image: url("../src/images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* navbar */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  color: #fff;
+}
+.navbar h2 {
+  padding: 14px 16px;
+}
+.navbar h2:hover {
+  cursor: pointer;
+  color: #d6cece;
+}
+.navbar ul {
+  display: flex;
+  list-style-type: none;
+  text-transform: capitalize;
+}
+li a {
+  display: block;
+  text-align: center;
+  padding: 14px 1.5rem;
+}
+
+li a:hover {
+  color: #d6cece;
+}
+
+/* landing */
+
+.landing {
+  max-width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  /* border: 5px solid yellow; */
+}
+.landing_des {
+  /* border: 5px solid black; */
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.landing_des_content {
+  display: block;
+}
+.landing_des_content h1 {
+  font-size: 4rem;
+  padding: 6rem 5rem 1.5rem;
+}
+.gradient-text {
+  color: #3498db;
+}
+.landing_des_content p {
+  font-size: 18px;
+  padding: 0 5rem 2.3rem;
+}
+.landing_des_content ul {
+  display: flex;
+}
+.landing_des_content li {
+  margin: 0 1rem;
+}
+.landing_des_content .btn {
+  padding: 1rem 5rem;
+}
+.landing_des_content a {
+  background-color: #2196f3;
+  height: 2rem;
+  width: 16em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  padding: 2rem 2.5rem;
+  border-radius: 4px;
+}
+.landing_des_content a:hover {
+  background-color: #0b7dda;
+}
+.landing_img {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.landing_img .ball {
+  height: 300px;
+  width: 450px;
+  position: absolute;
+  bottom: 250px;
+  right: 180px;
+  z-index: 1;
+}
+.landing_img .hand {
+  height: 100%;
+  width: 100%;
+}
+.animated {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(12px);
+  }
+  100% {
+    transform: translateY(-12px);
+  }
+}
+
+/* GENERATE */
+
+.generate {
+  /* border: 5px solid white; */
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.image_container {
+  /* border: 5px solid yellow; */
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.prompt_container {
+  /* border: 5px solid yellow; */
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.how_to h1 {
+  font-size: 2rem;
+  padding: 0 0 2rem;
+}
+.how_to p {
+  font-size: 18px;
+  padding: 0 0 3rem;
+}
+.prompt_field {
+  margin: auto;
+  max-width: 80%;
+  display: flex;
+}
+.prompt_field input[type="text"] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  background: #f1f1f1;
+  color: #111;
+}
+.prompt_field button {
+  padding: 1rem 3rem;
+  background: #2196f3;
+  color: white;
+  font-size: 17px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+.prompt_field button:hover {
+  background: #0b7dda;
+}
+.prompt_field::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* SAMPLE */
+
+.sample {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sample_content {
+  padding: 8rem 0;
+}
+.sample_content h1 {
+  font-size: 2rem;
+  padding: 0 0 3rem;
+  text-align: center;
+}
+.grid-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto auto auto;
+  overflow: hidden;
+}
+.grid-item {
+  text-align: center;
+  gap: none;
+  padding: 0;
+  margin: 0;
+}
+.grid-item img {
+  height: 210px;
+  width: 340px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 14px;
+  padding: 0 0 1rem;
 }

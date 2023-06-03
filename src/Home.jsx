@@ -33,19 +33,23 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="landing_img">
-          <img
-            className="ball animated"
-            src={ball}
-            alt="ball"
-            data-aos="fade-down"
-          />
-          <img
-            className="hand"
-            src={landing_img}
-            alt="landing hand"
-            data-aos="fade-left"
-          />
+        <div className="landing_des">
+          <div className="landing_img">
+            <div className="ball">
+              <img
+                className="animated"
+                src={ball}
+                alt="ball"
+                data-aos="fade-down"
+              />
+            </div>
+            <img
+              className="hand"
+              src={landing_img}
+              alt="landing hand"
+              data-aos="fade-left"
+            />
+          </div>
         </div>
       </div>
     </>

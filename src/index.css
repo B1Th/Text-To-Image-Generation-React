@@ -66,6 +66,7 @@ li a:hover {
   /* border: 5px solid black; */
   height: 90vh;
   flex: 1 1 600px;
+  padding-bottom: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -212,7 +213,7 @@ li a:hover {
   clear: both;
   display: table;
 }
-@media (max-width: 1400px) {
+@media (max-width: 1420px) {
   .image_generate:nth-child(2) {
     order: -1;
   }
@@ -271,6 +272,9 @@ img {
     max-width: 70%;
     right: -30%;
     bottom: 40%;
+  }
+  .img_box {
+    margin: -12rem 0 0;
   }
 }
 @media (max-width: 850px) {

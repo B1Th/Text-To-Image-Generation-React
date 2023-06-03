@@ -37,7 +37,7 @@ const Generate = () => {
           <div className="generate" id="gotogenerate">
             <div className="image_generate">
               <div className="img_box">
-                <h2>Image is loading...</h2>
+              <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                 {ImageUrl && <img src={ImageUrl} alt="Generated" />}
               </div>
             </div>

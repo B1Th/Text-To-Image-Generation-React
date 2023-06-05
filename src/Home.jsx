@@ -14,20 +14,18 @@ const Home = () => {
         <div className="landing_des" data-aos="fade-right">
           <div className="landing_des_content">
             <h1>
-              Generate <span class="gradient-text">images</span> with
-              <span class="gradient-text"> AI</span> instantly
+              Generate <span className="gradient-text">images</span> with
+              <span className="gradient-text"> AI</span> instantly
             </h1>
             <p>
               Get AI generated images from text straight from your browser very
               easily. You can get multiple variations of the same image.
             </p>
-            <p>
-              <ul>
-                <li>High Quality</li>
-                <li>Built For Speed</li>
-                <li>Fully Unique</li>
-              </ul>
-            </p>
+            <ul>
+              <li>High Quality</li>
+              <li>Built For Speed</li>
+              <li>Fully Unique</li>
+            </ul>
             <div className="btn">
               <a href="#gotogenerate">Generate AI Images</a>
             </div>

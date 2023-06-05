@@ -30,6 +30,11 @@ a {
   overflow: hidden;
   color: #fff;
 }
+.navbar .logo_img {
+  margin: 1rem 0 0 2rem;
+  max-width: 3rem;
+  cursor: pointer;
+}
 .navbar h2 {
   padding: 14px 16px;
 }
@@ -89,6 +94,7 @@ li a:hover {
 }
 .landing_des_content ul {
   display: flex;
+  padding: 0 5rem 1.5rem;
 }
 .landing_des_content li {
   margin: 0 1rem;
@@ -170,6 +176,7 @@ li a:hover {
   justify-content: center;
   align-items: center;
 }
+
 .how_to h1 {
   font-size: 2rem;
   padding: 0 0 2rem;
@@ -219,6 +226,7 @@ li a:hover {
   position: relative;
   width: 80px;
   height: 80px;
+  margin-bottom: 3rem;
 }
 .lds-roller div {
   animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
@@ -331,8 +339,7 @@ li a:hover {
 }
 
 .sample_item {
-  flex: 0 0 calc(30% - 20px);
-  max-width: calc(30% - 20px);
+  flex: 0 0 20%;
 }
 
 img {
@@ -374,6 +381,9 @@ img {
     font-size: 3rem;
   }
   .landing_des_content p {
+    font-size: 14px;
+  }
+  .landing_des_content ul {
     font-size: 14px;
   }
   .how_to p {

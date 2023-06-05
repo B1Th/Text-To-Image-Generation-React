@@ -1,13 +1,14 @@
 import React from "react";
+import logo from "./images/logo.png";
 
 const Navbar = () => {
   return (
     <>
       <div className="navbar">
-        <h2>AIPIC</h2>
+        <img className="logo_img" src={logo} alt="" />
         <ul>
           <li>
-            <a class="active" href="#home">
+            <a className="active" href="#home">
               Home
             </a>
           </li>

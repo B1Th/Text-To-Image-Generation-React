@@ -340,11 +340,36 @@ li a:hover {
 
 .sample_item {
   flex: 0 0 20%;
+  position: relative;
+  overflow: hidden;
+}
+.sample_item:hover .overlay {
+  opacity: 1;
 }
 
 img {
   width: 100%;
   height: 100%;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.overlay h3 {
+  font-size: 1vw;
+  color: #111;
+  font-weight: bold;
+  padding: 10px;
 }
 
 .footer {

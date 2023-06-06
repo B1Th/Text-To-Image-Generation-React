@@ -27,27 +27,25 @@ const Home = () => {
               <li>Fully Unique</li>
             </ul>
             <div className="btn">
-              <a href="#gotogenerate">Generate AI Images</a>
+              <a href="#gotogenerate">Get Started</a>
             </div>
           </div>
         </div>
         <div className="landing_des">
-          <div className="landing_img">
-            <div className="ball">
-              <img
-                className="animated"
-                src={ball}
-                alt="ball"
-                data-aos="fade-down"
-              />
-            </div>
+          <div className="ball">
             <img
-              className="hand"
-              src={landing_img}
-              alt="landing hand"
-              data-aos="fade-left"
+              className="animated"
+              src={ball}
+              alt="ball"
+              data-aos="fade-down"
             />
           </div>
+          <img
+            className="hand"
+            src={landing_img}
+            alt="landing hand"
+            data-aos="fade-left"
+          />
         </div>
       </div>
     </>

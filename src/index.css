@@ -72,6 +72,7 @@ li a:hover {
   height: 90vh;
   flex: 1 1 600px;
   padding-bottom: 1.5rem;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -123,22 +124,20 @@ li a:hover {
   width: 100%;
   bottom: -110px;
 }
-.landing_img .hand {
+.hand {
   /* border: 5px solid red; */
   max-width: 100%;
   height: auto;
   position: absolute;
-  object-fit: cover;
-  bottom: 0;
 }
-.landing_img .ball {
+.ball {
   /* border: 5px solid white; */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
   position: relative;
-  bottom: 27%;
+  bottom: 15%;
 }
 .ball img {
   /* border: 5px solid black; */
@@ -382,26 +381,11 @@ img {
 /* Media queries for responsiveness */
 
 @media (max-width: 1217px) {
-  .landing_img .hand {
-    max-width: 70%;
-    right: 0;
-  }
-  .landing_img .ball {
-    max-width: 70%;
-    right: -30%;
-    bottom: 40%;
-  }
   .img_box {
     margin: -12rem 0 0;
   }
 }
 @media (max-width: 850px) {
-  .landing_img .ball {
-    bottom: 0;
-  }
-  .landing_img {
-    bottom: 0%;
-  }
   .landing_des_content h1 {
     font-size: 3rem;
   }
@@ -418,12 +402,6 @@ img {
 }
 
 @media (max-width: 580px) {
-  .landing_img .ball {
-    bottom: -36%;
-  }
-  .landing_img {
-    bottom: 20%;
-  }
   .generate {
     margin: -9rem 0;
   }

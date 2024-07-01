@@ -1,0 +1,7 @@
+diffusers==0.16.1
+Django==3.2.24
+djangorestframework==3.14.0
+Pillow==9.2.0
+Pillow==10.3.0
+torch==2.0.1+cu118
+transformers==4.29.2

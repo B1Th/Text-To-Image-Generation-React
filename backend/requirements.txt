@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 diffusers==0.16.1
 Django==3.2.24
 djangorestframework==3.14.0
 Pillow==10.3.0
 torch==2.0.1+cu118
 transformers==4.29.2
+=======
+diffusers==0.16.1
+Django==3.2.24
+djangorestframework==3.14.0
+Pillow==10.3.0
+torch==2.0.1+cu118
+transformers==4.29.2
+>>>>>>> c9bd3af1ee7329b3b5fe3a8b5e596745640f75af

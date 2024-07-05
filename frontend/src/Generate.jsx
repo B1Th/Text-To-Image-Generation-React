@@ -9,9 +9,9 @@ const Generate = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const generateImage = async (e) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault();
 
-    setLoading(true); // Show loading animation
+    setLoading(true);
     setImageUrl(""); // Clear previous image
     setErrorMessage(""); // Clear previous error message
 
@@ -40,7 +40,7 @@ const Generate = () => {
       console.error("API request failed:", error);
     }
 
-    setLoading(false); // Hide loading animation
+    setLoading(false);
   };
 
   useEffect(() => {

@@ -2,7 +2,6 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import serializers
 
-
 from pathlib import Path
 import torch
 from diffusers import StableDiffusionPipeline
@@ -18,7 +17,7 @@ class CFG:
         self.seed = 42
         self.device = torch.device("cuda")
         self.generator = torch.Generator(device=self.device).manual_seed(self.seed)
-        self.image_gen_steps = 50
+        self.image_gen_steps = 25
         self.image_gen_model_id = "stabilityai/stable-diffusion-2"
         self.image_gen_size = (400, 400)
         self.image_gen_guidance_scale = 9

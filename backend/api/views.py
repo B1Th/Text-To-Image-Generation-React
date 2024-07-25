@@ -11,6 +11,16 @@ from PIL import Image
 import os
 from django.conf import settings
 
+from pymongo import MongoClient
+from bson.binary import Binary
+import io
+from bson.objectid import ObjectId
+from django.http import HttpResponse
+
+client = MongoClient('mongodb://localhost:27017/')
+db = client['image_database']
+collection = db['generated_images']
+
 
 class CFG:
     def __init__(self):
@@ -35,7 +45,7 @@ image_gen_model = StableDiffusionPipeline.from_pretrained(
     config.image_gen_model_id,
     torch_dtype=torch.float16,
     revision="fp16",
-    use_auth_token='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',
+    cd ='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',
     guidance_scale=config.image_gen_guidance_scale, generator=config.generator
     )
 image_gen_model = image_gen_model.to(config.device)
@@ -51,25 +61,30 @@ def generate_image(prompt, model):
 
 
     image = image.resize(config.image_gen_size)
-    #save the image
-    filename = f"{prompt.replace(' ','_')}.jpg"
-    image_folder_path = os.path.join(settings.MEDIA_ROOT,'generated_images')
-    os.makedirs(image_folder_path,exist_ok=True)
-    image_file_path= os.path.join(image_folder_path,filename)
-    image.save(image_file_path)
-    print(image_file_path)
+
     
-    return os.path.join('generated_images',filename)
+    img_byte_arr = io.BytesIO()
+    image.save(img_byte_arr, format='PNG')
+    img_byte_arr = img_byte_arr.getvalue()
+
+    image_id = collection.insert_one({
+        'prompt': prompt,
+        'image': Binary(img_byte_arr)
+    }).inserted_id
+
+    return str(image_id)
+
+
 
 #serializer 
 class ImageGenerationSerializer(serializers.Serializer):
     text_prompt = serializers.CharField(max_length=200)
 
-    def create(self,validated_data):
+    def create(self, validated_data):
         text_prompt = validated_data.get('text_prompt')
-        image_path = generate_image(text_prompt,image_gen_model)
+        image_id = generate_image(text_prompt, image_gen_model)
 
-        return {'image':image_path}
+        return {'image_id': image_id}
     
 
 class GenerateImageView(APIView):
@@ -79,11 +94,23 @@ class GenerateImageView(APIView):
             try:
                 result = serializer.create(serializer.validated_data)
                 print(result)
-                if result.get('image'):
+                if result.get('image_id'):
                     return Response(result,status=200)
                 else:
                     return Response({"error":"Image path could not be generated."},status=400)
             except Exception as e:
                 return Response({"error":str(e)},status=400)
         return Response(serializer.errors,status=400)
+    
+    
+class RetrieveImageView(APIView):
+    def get(self, request, image_id):
+        try:
+            image_data = collection.find_one({'_id': ObjectId(image_id)})
+            if image_data:
+                return HttpResponse(image_data['image'], content_type='image/png')
+            else:
+                return Response({"error": "Image not found"}, status=404)
+        except Exception as e:
+            return Response({"error": str(e)}, status=400)
             

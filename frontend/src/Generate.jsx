@@ -28,9 +28,8 @@ const Generate = () => {
       );
       const data = await response.json();
 
-      if (data.image) {
-        let imagePath = data.image.replace(/\\/g, "/");
-        const newImageUrl = `http://127.0.0.1:8000/media/${imagePath}`;
+      if (data.image_id) {
+        const newImageUrl = `http://127.0.0.1:8000/api/image/${data.image_id}/`;
         setImageUrl(newImageUrl);
       } else {
         setErrorMessage("Error: Image not found in API response");

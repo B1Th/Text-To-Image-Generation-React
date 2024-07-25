@@ -5,3 +5,4 @@ Pillow==10.4.0
 pymongo==4.8.0
 torch==2.0.1
 transformers==4.29.2
+gunicorn

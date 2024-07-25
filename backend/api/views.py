@@ -1,3 +1,4 @@
+import pymongo
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import serializers
@@ -17,8 +18,8 @@ import io
 from bson.objectid import ObjectId
 from django.http import HttpResponse
 
-client = MongoClient('mongodb://localhost:27017/')
-db = client['image_database']
+client = pymongo.MongoClient(os.getenv('DATABASE_URL'))
+db = client['Image_DataBase']
 collection = db['generated_images']
 
 

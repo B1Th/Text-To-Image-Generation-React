@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-2)6vd!v7mn(x=eicuj98&!76dwe^ruy)jf9v(vxyka^*6!qc0y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['your-backend-url.render.com', 'your-frontend-url.render.com']
+ALLOWED_HOSTS = ['https://text-to-image-generation-cf4z.onrender.com', 'https://text-to-image-generation-frontend.onrender.com']
 
 import os 
 # BASE_DIR = os.path.dirname(os.path(os.path.abspath(__file__)))

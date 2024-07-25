@@ -13,9 +13,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2)6vd!v7mn(x=eicuj98&!76dwe^ruy)jf9v(vxyka^*6!qc0y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['your-backend-url.render.com', 'your-frontend-url.render.com']
 
 import os 
 # BASE_DIR = os.path.dirname(os.path(os.path.abspath(__file__)))

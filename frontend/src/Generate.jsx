@@ -23,13 +23,13 @@ const Generate = () => {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/api/predict/",
+        `${process.env.REACT_APP_API_URL}/api/predict/`,
         requestOptions
       );
       const data = await response.json();
 
       if (data.image_id) {
-        const newImageUrl = `http://127.0.0.1:8000/api/image/${data.image_id}/`;
+        const newImageUrl = `${process.env.REACT_APP_API_URL}/api/image/${data.image_id}/`;
         setImageUrl(newImageUrl);
       } else {
         setErrorMessage("Error: Image not found in API response");

@@ -47,13 +47,13 @@ a {
   list-style-type: none;
   text-transform: capitalize;
 }
-li a {
+.navbar li a {
   display: block;
   text-align: center;
   padding: 14px 1.5rem;
 }
 
-li a:hover {
+.navbar li a:hover {
   color: #d6cece;
 }
 
@@ -386,6 +386,11 @@ img {
   }
 }
 @media (max-width: 850px) {
+  .navbar li a {
+    font-size: 14px;
+    padding: 14px 1rem;
+  }
+
   .landing_des_content h1 {
     font-size: 3rem;
   }
@@ -395,9 +400,28 @@ img {
   .landing_des_content ul {
     font-size: 14px;
   }
+
   .how_to p {
     font-size: 14px;
     padding: 0 0 3rem;
+  }
+  .landing_des_content a {
+    height: 1rem;
+    padding: 1.5rem 2.5rem;
+    font-size: 14px;
+  }
+  .prompt_field {
+    max-width: 100%;
+  }
+  .prompt_field input[type="text"] {
+    width: 80%;
+    padding: 5px;
+    font-size: 14px;
+  }
+  .prompt_field button {
+    width: 35%;
+    padding: 0.8rem 0;
+    font-size: 14px;
   }
 }
 

@@ -26,7 +26,7 @@ collection = db['generated_images']
 class CFG:
     def __init__(self):
         self.seed = 42
-        self.device = torch.device("cuda")
+        self.device = torch.device("cpu")
         self.generator = torch.Generator(device=self.device).manual_seed(self.seed)
         self.image_gen_steps = 25
         self.image_gen_model_id = "stabilityai/stable-diffusion-2"
@@ -44,9 +44,9 @@ config = CFG()
 # Create the image_gen_model using the config object
 image_gen_model = StableDiffusionPipeline.from_pretrained(
     config.image_gen_model_id,
-    torch_dtype=torch.float16,
-    revision="fp16",
-    cd =os.environ.get('TOKEN'),
+    torch_dtype=torch.float32,
+    revision="fp32",
+    cd ="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",
     guidance_scale=config.image_gen_guidance_scale, generator=config.generator
     )
 image_gen_model = image_gen_model.to(config.device)

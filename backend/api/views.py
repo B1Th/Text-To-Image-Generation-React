@@ -46,7 +46,7 @@ image_gen_model = StableDiffusionPipeline.from_pretrained(
     config.image_gen_model_id,
     torch_dtype=torch.float16,
     revision="fp16",
-    cd ='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',
+    cd =os.environ.get('TOKEN'),
     guidance_scale=config.image_gen_guidance_scale, generator=config.generator
     )
 image_gen_model = image_gen_model.to(config.device)

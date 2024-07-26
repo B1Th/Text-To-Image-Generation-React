@@ -29,7 +29,7 @@ class CFG:
         self.device = torch.device("cpu")
         self.generator = torch.Generator(device=self.device).manual_seed(self.seed)
         self.image_gen_steps = 25
-        self.image_gen_model_id = "stabilityai/stable-diffusion-2"
+        self.image_gen_model_id = "stabilityai/stable-diffusion-2-1"
         self.image_gen_size = (400, 400)
         self.image_gen_guidance_scale = 9
         self.prompt_gen_model_id = "gpt2"
@@ -50,6 +50,7 @@ image_gen_model = StableDiffusionPipeline.from_pretrained(
     guidance_scale=config.image_gen_guidance_scale, generator=config.generator
     )
 image_gen_model = image_gen_model.to(config.device)
+image_gen_model.enable_attention_slicing()
 
 
 def generate_image(prompt, model):
